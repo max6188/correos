@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+    
+        {% comment %} This Bootsrap css is added to all pages 
+        https://robertonunezc.com/como-agregar-bootstrap-a-django/
+        {% endcomment %}
+       
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        
+ 
+ <script>
+      $(document).ready(function() {
+
+         // jQuery code
+        var imagenUrl = "{% static 'imagenes/fondo.jpg' %}";
+        $("body").css("background-image", "url(" + imagenUrl + ")");
+
+        setTimeout(function(){
+          $('#mensaje').fadeOut("slow")
+         },4000);
+    
+      });
+   </script>
+
+
+	</head>
+   <body  style="background-color:#fcbc86;">
+      
+      
+      
+      {% include "includes/menug.html"  %}     |
+    <p>
+    
+    </p>
+      {% block content %}
+         Body content
+      {% endblock %}
+
+      <p>
+    
+      </p>
+      {% include 'includes/pie_pagina.html' %}
+   
+</html>
